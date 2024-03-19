@@ -1,7 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <RouterView />
+  <n-message-provider>
+    <n-dialog-provider>
+      <router-view />
+    </n-dialog-provider>
+  </n-message-provider>
 </template>
 
 <style scoped></style>

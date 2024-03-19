@@ -1,14 +1,15 @@
-import { App } from 'vue';
+import { App } from "vue";
+import routes from "./routers";
 import { createRouter, createWebHistory } from "vue-router";
+import layoutRoutes from "./autoload";
 
-const router = createRouter({
+const route = createRouter({
   history: createWebHistory(),
-  // 变为父子路由
-  routes: [{ path: "/", component: () => import("../views/home.vue") }],
+  routes:[...routes, ...layoutRoutes]
 });
 
 export function setupRouter(app: App) {
-  app.use(router);
+  app.use(route);
 }
 
-export default router;
+export default route;
