@@ -1,7 +1,7 @@
 <template>
   <div class="layout-body">
     <div class="left">
-      列表
+      主页
     </div>
     <div class="right">
       <calender />
@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import calender from "@/components/calender/calendar.vue";
+
 </script>
 
 <style scoped lang="scss">

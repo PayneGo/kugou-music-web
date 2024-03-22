@@ -1,24 +1,24 @@
 <script setup lang="ts">
 import { useDialog } from "naive-ui";
-import loginDialog from "@/components/home/login.vue";
+// import loginDialog from "@/components/home/login.vue";
 
 const dialog = useDialog();
 
-function showLoginDialog() {
-  dialog.create({
-    showIcon: false,
-    closable: false,
-    content: () => {
-      return h(loginDialog, {});
-    },
-  });
-}
+// function showLoginDialog() {
+//   dialog.create({
+//     showIcon: false,
+//     closable: false,
+//     content: () => {
+//       return h(loginDialog, {});
+//     },
+//   });
+// }
 </script>
 
 <template>
   <div class="layout-header">
     <div class="left">
-      <span class="logo">ＣＩＬＩＣＩＬＩ</span>
+      <span class="logo">KuGouMusic</span>
     </div>
     <div class="center">
       <n-input type="text" placeholder="基本的 Input" />
@@ -33,7 +33,8 @@ function showLoginDialog() {
 .layout-header {
   display: flex;
 
-  height: 40px;
+  height: 100%;
+  width: 100%;
 
   border-bottom: 1px solid #bab8b8;
 
@@ -46,7 +47,7 @@ function showLoginDialog() {
     align-items: center;
 
     .logo {
-      color: $primary-color;
+      color: rgb(22, 71, 249);
 
       font: {
         weight: 2em;

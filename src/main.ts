@@ -4,13 +4,13 @@ import App from "./App.vue";
 
 import route, { setupRouter } from "./router";
 import { setupNaive } from "@/naive-ui/index";
-
 async function bootstarp() {
   const app = createApp(App);
   setupRouter(app);
   await route.isReady();
   // 初始化组件
   setupNaive(app);
+  // app.use(store)
   app.mount("#app");
 }
 

@@ -21,6 +21,9 @@ const naive = NaiveUI.create({
     NaiveUI.NLayoutSider,
     NaiveUI.NLayout,
     NaiveUI.NLayoutFooter,
+    NaiveUI.NMenu,
+    NaiveUI.NIcon,
+    NaiveUI.NAvatar,
   ],
 });
 

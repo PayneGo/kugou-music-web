@@ -1,31 +1,64 @@
 <!--  -->
 <template>
   <router-view />
-  <n-layout>
-    <n-layout-header>颐和园路</n-layout-header>
-    <n-layout has-sider>
-      <n-layout-sider content-style="padding: 24px;"> 海淀桥 </n-layout-sider>
-      <n-layout-content content-style="padding: 24px;">
-        平山道
-      </n-layout-content>
-    </n-layout>
-    <n-layout-footer>成府路</n-layout-footer>
-  </n-layout>
+  <div class="main">
+    <div class="top"><top /></div>
+    <div class="body">
+      <div class="side"><side /></div>
+      <div class="body-body"><body-main /></div>
+    </div>
+    <div class="footer"><footers /></div>
+  </div>
 </template>
 
 <style scoped>
-.n-layout{
-  position: fixed;
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
-.n-layout-header {
-  padding: 24px;
+.body {
+  flex-wrap: wrap;
+  height: 80%;
+  display: flex;
+  background: #0582ff;
 }
 
-.n-layout-footer {
-  position: fixed;
-  height: 50px;
-  width: 100%;
+.side {
+  display: flex;
+  width: 20%;
+  background: #0df320;
+  justify-content: space-evenly;
+}
+
+.body-body {
+  width: 80%;
+  background: #b7ee14;
+  justify-content: space-evenly;
+}
+
+.footer {
+  height: 14.6%;
+  display: flex;
+}
+
+.top {
+  background: #03f965;
+  display: flex;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import top from "./header/index.vue";
+
+import bodyMain from "./body/index.vue";
+
+import side from "./menu/index.vue";
+
+import footers from "./footer/footer.vue"
+</script>
