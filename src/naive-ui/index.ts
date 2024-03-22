@@ -30,6 +30,8 @@ const naive = NaiveUI.create({
     NaiveUI.NThing, 
     NaiveUI.NSpace,
     NaiveUI.NScrollbar,
+    NaiveUI.NFlex,
+    NaiveUI.NSlider,
   ],
 });
 
