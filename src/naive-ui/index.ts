@@ -24,6 +24,12 @@ const naive = NaiveUI.create({
     NaiveUI.NMenu,
     NaiveUI.NIcon,
     NaiveUI.NAvatar,
+    NaiveUI.NPopover,
+    NaiveUI.NList,
+    NaiveUI.NListItem,
+    NaiveUI.NThing, 
+    NaiveUI.NSpace,
+    NaiveUI.NScrollbar,
   ],
 });
 

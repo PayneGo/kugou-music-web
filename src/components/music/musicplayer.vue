@@ -1,62 +1,39 @@
 <template>
   <div class="mp3-player">
-    <audio
-      ref="audioPlayer"
-      :src="currentSongUrl"
-      @timeupdate="updateProgress"
-    ></audio>
+    <audio ref="audioPlayer" :src="currentSongUrl" @timeupdate="updateProgress"></audio>
 
-    <n-icon
-      @click="playPause"
-      v-if="!isPlaying"
-      size="40"
-      color="green"
-      depth="4"
-      :component="PlayCircle20Regular"
-    />
+    <n-icon @click="playPause" v-if="!isPlaying" size="40" color="green" depth="4" :component="PlayCircle20Regular" />
 
-    <n-icon
-      @click="playPause"
-      v-if="isPlaying"
-      size="40"
-      color="green"
-      depth="4"
-      :component="PauseCircle20Regular"
-    />
+    <n-icon @click="playPause" v-if="isPlaying" size="40" color="green" depth="4" :component="PauseCircle20Regular" />
 
-    <input
-      type="range"
-      min="0"
-      :max="audioDuration"
-      step="1"
-      v-model="currentTime"
-      class="progress"
-      @input="seek"
-    />
+    <input type="range" min="0" :max="audioDuration" step="1" v-model="currentTime" class="progress" @input="seek" />
     <span>{{ formatTime(currentTime) }} / {{ formatTime(audioDuration) }}</span>
-    <img
-      :style="{ transform: `rotate(${currentTime * 30}deg)` }"
-      class="rotating-element"
-      round
-      size="20"
-      :src="currentSongCover"
-      v-if="currentSongCover"
-      id="musicImg"
-    />
-    <input
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      v-model="volume"
-      class="volume"
-      @input="adjustVolume"
-    />
-    <select v-model="selectedSong" @change="changeSong" class="song-selector">
+    <n-avatar :style="{ transform: `rotate(${currentTime * 30}deg)` }" class="rotating-element" round :size="30"
+      :src="currentSongCover" v-if="currentSongCover" />
+    <input type="range" min="0" max="1" step="0.01" v-model="volume" class="volume" @input="adjustVolume" />
+    <!-- <select v-model="selectedSong" @change="changeSong" class="song-selector">
       <option v-for="(song, index) in songs" :key="index" :value="song.url">
         {{ song.name }}
       </option>
-    </select>
+    </select> -->
+    <n-popover placement="top" trigger="click" @update:show="handleUpdateShow">
+      <template #trigger>
+        <n-icon size="40" i-if="true" depth="4" :component="PauseCircle20Regular" />
+      </template>
+      <!-- <div v-for="(song, index) in songs" @chick="changeSong" >
+      {{ index }} -{{ song.name }}
+    </div> -->
+      <n-list hoverable clickable>
+        <template #header>
+      播放列表
+    </template>
+    <n-scrollbar style="max-height: 50vh">
+        <n-list-item v-for="(song, index) in songs" style="width: 60vh;" @click="changeSong">
+          <div>{{ index }} - {{ song.name }}</div>
+        </n-list-item>
+      </n-scrollbar>
+      </n-list>
+    </n-popover>
   </div>
 </template>
 
@@ -64,7 +41,6 @@
 import { ref, computed } from "vue";
 import { PlayCircle20Regular, PauseCircle20Regular } from "@vicons/fluent";
 
-const rotation = ref(0);
 const audioPlayer = ref<HTMLAudioElement | null>(null);
 const isPlaying = ref(false);
 const volume = ref(1);
@@ -190,8 +166,15 @@ button {
   cursor: pointer;
 }
 
+.songImageCard {
+  width: 200px;
+  height: 200px;
+}
+
 .rotating-element {
-  transition: transform 0.5s ease; /* 添加过渡效果 */
+  /* border-radius: 50%; */
+  transition: transform 0.5s ease;
+  /* 添加过渡效果 */
 }
 
 .musicImg {
