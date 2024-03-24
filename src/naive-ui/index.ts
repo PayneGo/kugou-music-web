@@ -32,6 +32,7 @@ const naive = NaiveUI.create({
     NaiveUI.NScrollbar,
     NaiveUI.NFlex,
     NaiveUI.NSlider,
+    NaiveUI.NIconWrapper,
   ],
 });
 
