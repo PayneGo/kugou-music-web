@@ -1,14 +1,12 @@
 <!--  -->
 <template>
   <div>
-        <music/>
+    <music />
   </div>
 </template>
 
-<script  setup lang='ts'>
-import music from "@/components/music/musicplayer.vue"
+<script setup lang="ts">
+import music from "@/components/music/musicplayer.vue";
 </script>
 
-<style  scoped>
-
-</style>
+<style scoped></style>

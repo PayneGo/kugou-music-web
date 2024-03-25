@@ -1,10 +1,10 @@
-import { Axios } from "@/plugins/axios/Axios";
+import Axios from "./Axios";
 
 const http = new Axios({
   baseURL: import.meta.env.VITE_API_URL,
   // baseURL: "/api",
-  timeout: 1000,
+  timeout: 10000,
   withCredentials: true,
 });
-
-export { http };
+const setup = () => {};
+export { http, setup };

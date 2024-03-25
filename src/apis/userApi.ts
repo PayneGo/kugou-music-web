@@ -1,17 +1,28 @@
 import { http } from "@/plugins/axios";
+import UserInfo from "@/type/UserType"
 
-class userApi {
-  playlist(keyword:string,page: Number, pagesize: Number) {
+class UserApi {
+  // 手机登陆
+  loginCellphone(userInfo: UserInfo) {
     return http.request({
-      url: `/search`,
+      url: `/login/cellphone`,
       method: "get",
       params: {
-        keyword,
-        page,
-        pagesize,
+        mobile: userInfo.mobile,
+        code: userInfo.code,
+      },
+    });
+  }
+
+  // 发送手机验证码
+  sentCaptcha(mobile: string) {
+    return http.request({
+      url: `/captcha/sent`,
+      method: "get",
+      params: {
+        mobile,
       },
     });
   }
 }
-
-export default new userApi();
+export default new UserApi();

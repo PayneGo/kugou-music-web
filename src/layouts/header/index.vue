@@ -1,18 +1,19 @@
 <script setup lang="ts">
 import { useDialog } from "naive-ui";
-// import loginDialog from "@/components/home/login.vue";
+import loginDialog from "@/components/home/login.vue";
+import { h } from "vue";
 
 const dialog = useDialog();
 
-// function showLoginDialog() {
-//   dialog.create({
-//     showIcon: false,
-//     closable: false,
-//     content: () => {
-//       return h(loginDialog, {});
-//     },
-//   });
-// }
+function showLoginDialog() {
+  dialog.create({
+    showIcon: false,
+    closable: false,
+    content: () => {
+      return h(loginDialog, {});
+    },
+  });
+}
 </script>
 
 <template>

@@ -33,6 +33,7 @@ const naive = NaiveUI.create({
     NaiveUI.NFlex,
     NaiveUI.NSlider,
     NaiveUI.NIconWrapper,
+    NaiveUI.NLoadingBarProvider,
   ],
 });
 

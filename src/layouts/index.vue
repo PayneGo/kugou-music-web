@@ -21,19 +21,16 @@
   flex-wrap: wrap;
   height: 80%;
   display: flex;
-  background: #0582ff;
 }
 
 .side {
   display: flex;
   width: 20%;
-  background: #0df320;
   justify-content: space-evenly;
 }
 
 .body-body {
   width: 80%;
-  background: #b7ee14;
   justify-content: space-evenly;
 }
 
@@ -43,7 +40,6 @@
 }
 
 .top {
-  background: #03f965;
   display: flex;
 }
 
@@ -60,5 +56,9 @@ import bodyMain from "./body/index.vue";
 
 import side from "./menu/index.vue";
 
-import footers from "./footer/footer.vue"
+import footers from "./footer/footer.vue";
+
+import { useMessage,useLoadingBar } from "naive-ui";
+
+window.$NMessage = useMessage();
 </script>
